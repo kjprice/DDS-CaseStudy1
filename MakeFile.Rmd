@@ -10,7 +10,7 @@ unlink('data', recursive = TRUE)
 
 ### Download necessary data
 
-Download the two required csv files (as `education-raw.csv` and `gdp-raw.csv`)
+Download the two required csv files (as `education-raw.csv` and `gdp-raw.csv`).
 
 ```{r}
 source('download.R')
