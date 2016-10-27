@@ -1,0 +1,33 @@
+---
+title: "MakeFile"
+output: html_document
+---
+
+```{r, echo=FALSE}
+# remove the data directory for presentation
+unlink('data', recursive = TRUE)
+```
+
+### Download necessary data
+
+Download the two required csv files (as `education-raw.csv` and `gdp-raw.csv`)
+
+```{r}
+source('download.R')
+```
+
+### Tidy data
+
+Create a new file `gdp-clean.csv` by taking the country code and gdp from `gdp-raw.csv`, while making sure that gdp is actually numerical.
+
+```{r}
+source('tidy.R')
+```
+
+### Merge data
+
+Merge the data from `education-raw.csv` and `gdp-clean.csv` using the column "CountryCode". Create a new csv file `Countries.csv` based on only the three columns we need for analytics.
+
+```{r}
+source('merge.R')
+```
