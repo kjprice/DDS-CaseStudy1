@@ -10,4 +10,4 @@ CountryGdp = as.numeric(gsub("[^[:digit:]]","", gdp$V5))
 clean.gdp = data.frame(CountryCode, CountryGdp)
 
 # save the csv to be used later (in merge.R)
-write.csv(merged.data, 'data/gdp-clean.csv')
+write.csv(clean.gdp, 'data/gdp-clean.csv')
