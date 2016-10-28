@@ -1,0 +1,20 @@
+---
+title: "Country-Data"
+output: html_document
+---
+
+1. how many ids matched in the merge?
+```{r}
+countries = read.csv('data/Countries.csv')
+nrow(countries)
+original.education.data = read.csv('data/education-raw.csv')
+nrow(original.education.data)
+```
+2. Sort by gdp (so US is last). What is the 13th country?
+
+```{r}
+countries[order(GDP),]
+```
+3. What are the average GDP rankings for the "High Income: OECD" and "High income nonOECD" groups?
+4. Plot the GDP for all of the countries. Use ggplot2 - color by IncomeGroup
+5. Seperate GDP rankings into 5 quantile groups. Make a table versus Income Group. how many countries are Lower middle income among the 38 nations with the highest GDP?
