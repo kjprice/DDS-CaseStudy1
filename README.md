@@ -60,4 +60,4 @@ nrow(lower.middle.income.in.first.quantile)
 
     ## [1] 16
 
-In summary, we can make a few observations from the data. First, it appears that countries who participate in OECD tend to have a higher GDP than countries, in their same Income Group, who do not participate in OECD.
+In summary, we can make a few observations from the data. First, it appears that countries who participate in OECD tend to have a higher GDP than countries, in their same Income Group, who do not participate in OECD. Also, the "Lower middle income" group is disproportionately represented in the lowest GPA quantile.
