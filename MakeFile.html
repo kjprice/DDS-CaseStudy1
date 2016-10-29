@@ -126,13 +126,18 @@ $(document).ready(function () {
 </div>
 <div id="tidy-data" class="section level3">
 <h3>Tidy data</h3>
-<p>Create a new file <code>gdp-clean.csv</code> by taking the country code and gdp from <code>gdp-raw.csv</code>, while making sure that gdp is actually numerical.</p>
+<p>Create a new file <code>gdp-clean.csv</code> by taking the country code and gdp from <code>gdp-raw.csv</code>, while making sure that gdp is actually numerical and removing rows where GDP is <code>NA</code> (122 rows removed). Also, create <code>education-clean.csv</code> from the file <code>education-clean</code> by removing rows where Income Group is empty (6 rows removed).</p>
 <pre class="r"><code>source('tidy.R')</code></pre>
 </div>
 <div id="merge-data" class="section level3">
 <h3>Merge data</h3>
 <p>Merge the data from <code>education-raw.csv</code> and <code>gdp-clean.csv</code> using the column “CountryCode”. Create a new csv file <code>Countries.csv</code> based on only the three columns we need for analytics.</p>
 <pre class="r"><code>source('merge.R')</code></pre>
+</div>
+<div id="install-packages" class="section level3">
+<h3>Install Packages</h3>
+<p>Be sure to install the following package if you want to replicate this study:</p>
+<pre class="r"><code>#install.packages('ggplot2')</code></pre>
 </div>
 
 

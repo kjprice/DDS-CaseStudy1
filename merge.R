@@ -13,4 +13,4 @@ IncomeGroup = merged.data$Income.Group
 final.data = data.frame(CountryCode, GDP, IncomeGroup)
 
 # save the data to be used in analysis
-write.csv(final.data, 'data/Countries.csv')
+write.csv(final.data, 'data/Countries.csv', row.names = FALSE)
