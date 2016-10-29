@@ -18,7 +18,7 @@ source('download.R')
 
 ### Tidy data
 
-Create a new file `gdp-clean.csv` by taking the country code and gdp from `gdp-raw.csv`, while making sure that gdp is actually numerical.
+Create a new file `gdp-clean.csv` by taking the country code and gdp from `gdp-raw.csv`, while making sure that gdp is actually numerical and removing rows where GDP is `NA` (122 rows removed). Also, create `education-clean.csv` from the file `education-clean` by removing rows where Income Group is empty (6 rows removed).
 
 ```{r}
 source('tidy.R')

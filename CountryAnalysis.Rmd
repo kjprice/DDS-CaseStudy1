@@ -10,6 +10,7 @@ nrow(countries)
 original.education.data = read.csv('data/education-raw.csv')
 nrow(original.education.data)
 ```
+
 2. Sort by gdp (so US is last). What is the 13th country?
 
 ```{r}
@@ -17,6 +18,7 @@ countries[order(countries$GDP),][13,]
 ```
 
 3. What are the average GDP rankings for the "High Income: OECD" and "High income nonOECD" groups?
+
 ... NAs removed
 
 ```{r}
@@ -30,12 +32,18 @@ mean(countries[countries$IncomeGroup == 'High income: OECD' & complete.cases(cou
 #install.packages('ggplot2')
 library('ggplot2')
 #plot(countries$GDP)
-not.null.countries = countries[countries$IncomeGroup != '' & complete.cases(countries$GDP),]
-ggplot(not.null.countries, aes(x=CountryCode, y=GDP, colour=IncomeGroup)) + geom_point() + scale_fill_manual(values=c('#CC6666', '#9999CC', '#66CC99', '#3c0', 'c65', '3c9'))
+#countries = countries[countries$IncomeGroup != '' & complete.cases(countries$GDP),]
+ggplot(countries, aes(x=CountryCode, y=GDP, colour=IncomeGroup)) + geom_point() + scale_fill_manual(values=c('#CC6666', '#9999CC', '#66CC99', '#3c0', 'c65', '3c9'))
 ```
+
 5. Seperate GDP rankings into 5 quantile groups. Make a table versus Income Group. how many countries are Lower middle income among the 38 nations with the highest GDP?
+
 ```{r}
-first.quantile = not.null.countries[1:38,]
-countries.in.lower.income = first.quantile[first.quantile$IncomeGroup == 'Lower middle income',]
-nrow(countries.in.lower.income)
+###
+countries$quantile = with(countries, cut(GDP,
+  breaks=quantile(GDP, probs=seq(0,1, by=.20), na.rm=TRUE),
+  include.lowest=TRUE, labels=c("1","2","3","4","5")))
+first.quantile = countries[countries$quantile=='1',]
+lower.middle.income.in.first.quantile = first.quantile[first.quantile$IncomeGroup == 'Lower middle income',]
+nrow(lower.middle.income.in.first.quantile)
 ```

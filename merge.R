@@ -1,5 +1,5 @@
 # import raw education file
-education = read.csv('data/education-raw.csv')
+education = read.csv('data/education-clean.csv')
 # import cleaned gdp data
 gdp = read.csv('data/gdp-clean.csv')
 
